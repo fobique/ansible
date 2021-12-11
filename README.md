@@ -1,2 +1,2 @@
 # ansible
-конфигурация Ansible
+Ansible configuration
