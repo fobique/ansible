@@ -1,0 +1,15 @@
+---
+- name: nginx installation
+  hosts: servers
+  become: yes
+
+  tasks:
+  - name: copy repo file
+    copy:
+     src: /etc/yum.repos.d/nginx.repo
+     dest: /etc/yum.repos.d/nginx.repo
+
+  - name: nginx yum installation
+    yum:
+     name: nginx
+     state: latest
