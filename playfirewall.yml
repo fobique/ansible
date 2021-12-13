@@ -1,0 +1,15 @@
+---
+- name: Firewall Power Off
+  hosts: servers
+  become: yes
+
+  tasks:
+  - name: Disable SELinux
+    selinux:
+     state: disabled
+
+  - name: Disable firewall
+    service:
+     name: firewalld
+     state: stopped  
+     enabled: no
