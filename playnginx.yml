@@ -13,3 +13,9 @@
     yum:
      name: nginx
      state: latest
+
+  - name: nginx start enable
+    ansible.builtin.service:
+     name: nginx
+     state: started
+     enabled: yes
