@@ -16,3 +16,12 @@
      state: started
      enabled: yes
      
+  - name: get-ip-from-server2
+    debug:
+     var: hostvars[ 'linux1' ].ansible_default_ipv4.address
+
+
+#  - name: haproxy.cfg copying
+#    template:
+#     src: ~/ansible/haproxy/haproxy.j2
+#     dest: /etc/haproxy/haproxy.cfg
