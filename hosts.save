@@ -1,0 +1,5 @@
+[servers]
+linux1 ansible_host=192.168.1.48    x1=Chuck
+linux2 ansible_host=192.168.1.128   x1=Bruce
+[haproxy]
+linux3 ansible_host=192.168.1.98    x1=Jackie

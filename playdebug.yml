@@ -1,0 +1,10 @@
+---
+- name: Debug
+  hosts: all
+  become: yes
+
+  tasks:
+
+   - debug:
+      var: hostvars ['linux1'].ansible_default_ipv4.address
+

@@ -1,0 +1,24 @@
+---
+- name: keepalived installing 
+  become: yes
+  hosts: haproxy
+
+  tasks:
+
+  - name: keepalived installing
+    yum:
+     name: keepalived
+     state: latest
+     
+#  - name: keepalived.conf copying
+#    template:
+#     src: 
+#     dest: /etc/haproxy/haproxy.cfg
+
+  - name: keepalived start & enable
+    systemd:
+     name: haproxy
+     state: started
+     enabled: yes
+
+
