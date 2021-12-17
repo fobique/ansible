@@ -39,6 +39,6 @@ frontend http_front
 
 backend http_back
 	balance roundrobin
-        server linux1 {{hostvars['linux1'].ansible_host}}:80
-	server linux2 {{hostvars['linux2'].ansible_host}}:80
+        server linux1 {{hostvars.linux1ip}}:80
+	server linux2 {{hostvars.linux2ip}}:80
 

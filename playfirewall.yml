@@ -1,6 +1,6 @@
 ---
 - name: Firewall Power Off
-  hosts: servers
+  hosts: haproxy
   become: yes
 
   tasks:

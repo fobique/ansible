@@ -1,9 +1,0 @@
----
-- name: Debug
-  hosts: haproxy
-  become: yes
-
-  tasks:
-
-   - debug:
-      var: hostvars
