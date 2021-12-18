@@ -1,6 +1,6 @@
 ---
 - name: Firewall Power Off
-  hosts: haproxy
+  hosts: all
   become: yes
 
   tasks:
@@ -13,3 +13,10 @@
      name: firewalld
      state: stopped  
      enabled: no
+
+  - name: Reboot and reconnect
+    reboot:
+     connect_timeout: 5
+     reboot_timeout: 600
+     post_reboot_delay: 120
+     test_command: whoami
