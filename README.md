@@ -10,5 +10,5 @@
 — в roles/nginx/defaults/main.yml указывается название сетевого интерфейса и виртуальный ip для keepalived
 — в roles/nginx/vars/main.yml указывается путь к публичному ключу пользователя сервера Ansible и имя пользователя хоста
 
-HTML-страница и конфигурационные файлы haproxy.cfg и keepalived.conf генерируются с помощью шаблона Jinja2
+HTML-страница и конфигурационные файлы haproxy.cfg и keepalived.conf генерируются с помощью шаблона Jinja2.
 Haproxy чередует сервера методом roundrobin (по-очереди)
