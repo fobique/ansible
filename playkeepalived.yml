@@ -10,10 +10,10 @@
      name: keepalived
      state: latest
      
-#  - name: keepalived.conf copying
-#    template:
-#     src: 
-#     dest: /etc/haproxy/haproxy.cfg
+  - name: keepalived.conf copying
+    template:
+     src: ~/ansible/keepalived/keepalived.j2
+     dest: /etc/keepalived/keepalived.conf
 
   - name: keepalived start & enable
     systemd:

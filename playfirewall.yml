@@ -1,6 +1,6 @@
 ---
 - name: Firewall Power Off
-  hosts: all
+  hosts: linux2
   become: yes
 
   tasks:
@@ -16,7 +16,7 @@
 
   - name: Reboot and reconnect
     reboot:
-     connect_timeout: 5
-     reboot_timeout: 600
-     post_reboot_delay: 120
-     test_command: whoami
+#     connect_timeout: 5
+#     reboot_timeout: 600
+#     post_reboot_delay: 120
+#     test_command: whoami

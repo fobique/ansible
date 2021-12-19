@@ -1,0 +1,10 @@
+---
+- name: SSH connection  setup
+  hosts: all
+  become: yes
+
+  tasks:
+   - name: copying public key
+      copy:
+       src: ~/.ssh/id_rsa.pub
+       dest: ~/.ssh/known_hosts/
