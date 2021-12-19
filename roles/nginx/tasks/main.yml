@@ -1,0 +1,63 @@
+---
+# tasks file nginx
+
+- block: ######### NGINX
+
+  - name: copy repo file
+    copy:
+     src: nginx.repo
+     dest: /etc/yum.repos.d/nginx.repo
+
+  - name: nginx yum installation
+    yum:
+     name: nginx
+     state: latest
+
+  - name: Copying index.html
+    template:
+     src: index.j2
+     dest: /usr/share/nginx/html/index.html
+
+  - name: nginx start enable
+    ansible.builtin.service:
+     name: nginx
+     state: started
+     enabled: yes
+
+  when: inventory_hostname in groups['nginx']
+
+- block: ######### HAPROXY
+
+  - name: haproxy installing
+    yum:
+     name: haproxy
+     state: latest
+
+  - name: haproxy.cfg copying
+    template:
+     src: haproxy.j2
+     dest: /etc/haproxy/haproxy.cfg
+
+  - name: haproxy start & enable
+    systemd:
+     name: haproxy
+     state: started
+     enabled: yes
+
+  - name: keepalived installing
+    yum:
+     name: keepalived
+     state: latest
+
+  - name: keepalived.conf copying
+    template:
+     src: keepalived.j2
+     dest: /etc/keepalived/keepalived.conf
+
+  - name: keepalived start & enable
+    systemd:
+     name: haproxy
+     state: started
+     enabled: yes
+
+  when: inventory_hostname in groups['haproxy']

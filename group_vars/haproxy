@@ -1,5 +1,0 @@
----
-ansible_user			: root
-ansible_ssh_private_key_file	: ~/.ssh/id_rsa
-ka_interface                    : ens0s3
-ka_virt_ip                      : 192.168.1.100

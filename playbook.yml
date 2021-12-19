@@ -1,0 +1,7 @@
+---
+- name: Balanced High-Avaliable Nginx stand Installation
+  hosts: all
+  become: yes
+
+  roles:
+   - nginx
